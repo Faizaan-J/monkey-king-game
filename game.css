@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background:#1a0a00;
+  display:flex; align-items:center; justify-content:center;
+  width:100vw; height:100vh; overflow:hidden;
+  font-family:'Comic Neue',cursive;
+}
+
+#gc {
+  width:800px; height:600px;
+  position:relative; overflow:hidden;
+  background:#000;
+  border:4px solid #c8860a;
+  box-shadow:0 0 40px #c8860a88, 0 0 80px #c8860a44;
+}
+
+/*--LOADING--*/
+#loading-screen {
+    position:absolute; 
+    inset:0; 
+    background:#000;
+    display:flex; 
+    flex-direction:column;
+    align-items:center; 
+    justify-content:center;
+    z-index:100; 
+    font-family:'Bangers',cursive;
+    color:#c8860a; 
+    letter-spacing:3px;
+}
+#loading-label {
+    font-size:28px; 
+    margin-bottom:16px;
+}
+#load-bar-bg {
+    width:280px; 
+    height:16px; 
+    background:#333; 
+    border:2px solid #c8860a; 
+    border-radius:2px; 
+    overflow:hidden;
+}
+#load-bar {
+    width:0%; 
+    height:100%; 
+    background:linear-gradient(90deg,#c8860a,#fde047); 
+    transition:width 0.2s ease
+}
+#load-text {
+    font-size:13px; 
+    margin-top:10px; 
+    color:#fff8; 
+    letter-spacing:1px
+}
+#continue-btn {
+    transition: opacity 300ms ease-out; 
+    margin-top:18px; 
+    padding:12px 22px; 
+    border:2px solid #c8860a; 
+    background:#111; color:#c8860a; 
+    font-family:'Bangers',cursive; 
+    font-size:18px; 
+    letter-spacing:2px; 
+    cursor:pointer; 
+    opacity:0;
+}
+
+/* ── CUTSCENE ── */
+#cutscene {
+  position:absolute; inset:0;
+  background:#000;
+}
+#cs-img {
+  position:absolute;
+  width:120%; height:120%;
+  object-fit:cover; object-position:center;
+  top:-10%; left:-10%;
+  transition: transform 7s ease-in-out, opacity 0.8s ease;
+}
+#cs-overlay {
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.42);
+  pointer-events:none;
+}
+#narration-box {
+  position:absolute;
+  bottom:18px; left:18px; right:18px;
+  background:rgba(0,0,0,0.88);
+  border:2px solid #c8860a;
+  border-radius:4px;
+  padding:12px 16px;
+  color:#fff;
+  font-size:14px; line-height:1.55;
+  min-height:58px;
+}
+#narration-box .lbl {
+  font-size:10px; color:#c8860a;
+  text-transform:uppercase; letter-spacing:2px;
+  margin-bottom:3px; font-weight:700;
+}
+#skip-btn {
+  position:absolute; top:12px; right:14px;
+  background:rgba(0,0,0,0.7); border:1px solid #c8860a88;
+  color:#c8860a; font-family:'Comic Neue',cursive;
+  font-size:12px; padding:4px 12px; cursor:pointer;
+  border-radius:2px; letter-spacing:1px; z-index:10;
+}
+#skip-btn:hover { background:#c8860a22; }
+#pg-ind {
+  position:absolute; top:12px; left:14px;
+  color:#c8860a88; font-size:11px; letter-spacing:1px;
+}
+
+/* ── MENU ── */
+#menu {
+  display:none; position:absolute; inset:0;
+  flex-direction:column; align-items:center; justify-content:center;
+  background:#0d0500;
+}
+#menu-bg {
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at 50% 30%,#8b1a1a44 0%,transparent 60%),
+             radial-gradient(ellipse at 20% 80%,#c8860a22 0%,transparent 50%);
+}
+#menu-title {
+  font-family:'Bangers',cursive; font-size:54px;
+  color:#c8860a; letter-spacing:4px; text-align:center;
+  text-shadow:3px 3px 0 #000,6px 6px 0 #8b1a1a,0 0 30px #c8860a88;
+  z-index:1; line-height:1;
+}
+#menu-sub {
+  font-family:'Bangers',cursive; font-size:19px;
+  color:#fff8; letter-spacing:6px; z-index:1; margin-bottom:20px;
+}
+#menu-monkey {
+  width:130px; z-index:1; margin-bottom:16px;
+  animation:mfloat 3s ease-in-out infinite;
+}
+@keyframes mfloat {
+  0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
+}
+.mbtn {
+  font-family:'Bangers',cursive; font-size:22px; letter-spacing:3px;
+  padding:10px 36px; border:3px solid #c8860a;
+  background:transparent; color:#c8860a; cursor:pointer;
+  z-index:1; margin:5px;
+  transition:all .15s;
+}
+.mbtn:hover { background:#c8860a; color:#000; transform:scale(1.04); }
+
+/* ── BATTLE ── */
+@keyframes death-animation {
+  0% {
+    translate: 0;
+    rotate: 0;
+    opacity: 1;
+  }
+  65% {
+    translate: 0 30px;
+    rotate: -80deg;
+  }
+  100% {
+        rotate: -90deg;
+        opacity: 0;
+    }
+}
+
+#player-img.death {
+    animation: death-animation 1s ease forwards;
+}
+
+#enemy-img.death {
+    animation: death-animation 1s ease forwards;
+}
+
+#battle {
+  display:none; position:absolute; inset:0;
+  flex-direction:column;
+}
+#battle-bg {
+  position:absolute; inset:0;
+  background:linear-gradient(180deg,#87CEEB 0%,#87CEEB 58%,#4a7c1e 58%,#3d6b18 100%);
+}
+.cloud { position:absolute; background:white; border-radius:50px; opacity:.8; }
+.cloud::before,.cloud::after { content:''; position:absolute; background:white; border-radius:50%; }
+
+/* HUD */
+#hud {
+  position:absolute; top:0; left:0; right:0;
+  padding:8px 14px;
+  display:flex; justify-content:space-between; align-items:flex-start;
+  z-index:10; pointer-events:none;
+}
+.fhud { display:flex; flex-direction:column; gap:3px; width:200px; }
+.fhud.right { align-items:flex-end; }
+.fname { font-family:'Bangers',cursive; font-size:15px; letter-spacing:2px; color:#fff; text-shadow:1px 1px 0 #000,2px 2px 0 #000; }
+.hpbg { width:100%; height:14px; background:#333; border:2px solid #000; border-radius:2px; overflow:hidden; }
+.hpfill { height:100%; background:linear-gradient(90deg,#22c55e,#86efac); transition:width .4s ease; }
+.hpfill.low { background:linear-gradient(90deg,#ef4444,#fca5a5); }
+.hpfill.mid { background:linear-gradient(90deg,#eab308,#fde047); }
+.hptxt { font-size:10px; color:#fff; text-shadow:1px 1px 0 #000; }
+
+/* ARENA */
+#arena {
+  position:absolute;
+  top:50px; left:0; right:0; bottom:130px;
+  display:flex; align-items:flex-end;
+  justify-content:space-between;
+  padding:0 55px 20px;
+}
+.fspr { position:relative; display:flex; flex-direction:column; align-items:center; }
+#player-img { width:110px; }
+#enemy-img  { width:110px; }
+#enemy-spr  { transform:scaleX(-1); }
+.shadow { width:70px; height:10px; background:rgba(0,0,0,.28); border-radius:50%; margin-top:-6px; }
+#cloud-fx {
+  position:absolute; bottom:115px; left:52px;
+  width:90px; height:44px; background:white; border-radius:50px;
+  opacity:0; transition:opacity .3s; pointer-events:none;
+}
+#cloud-fx::before { content:''; position:absolute; top:-18px; left:12px; width:36px; height:36px; background:white; border-radius:50%; }
+#cloud-fx::after  { content:''; position:absolute; top:-26px; left:30px; width:45px; height:45px; background:white; border-radius:50%; }
+
+/* BATTLE LOG */
+#blog {
+  position:absolute; bottom:132px; left:50%; transform:translateX(-50%);
+  background:rgba(0,0,0,.88); border:2px solid #c8860a;
+  color:#fff; font-size:12px; padding:6px 14px;
+  border-radius:3px; min-width:280px; max-width:480px;
+  text-align:center; z-index:10; line-height:1.4;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* MOVES */
+#moves {
+  position:absolute; bottom:0; left:0; right:0;
+  background:rgba(10,5,0,.94);
+  border-top:3px solid #c8860a;
+  padding:7px 10px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);
+  gap:5px;
+  height:128px;
+  z-index:10;
+}
+.mvbtn {
+  font-family:'Bangers',cursive; font-size:11px; letter-spacing:.8px;
+  padding:5px 4px; border:2px solid; background:transparent;
+  cursor:pointer; border-radius:2px;
+  display:flex; flex-direction:column; align-items:center;
+  justify-content:center; gap:1px; line-height:1.1;
+  transition:all .12s;
+}
+.mvbtn:hover:not(:disabled) { transform:translateY(-1px); filter:brightness(1.3); }
+.mvbtn:disabled { opacity:.38; cursor:default; }
+.mvbtn .mn { font-size:11px; }
+.mvbtn .mt { font-size:8px; opacity:.7; letter-spacing:.3px; }
+.mvbtn .mp { font-size:9px; opacity:.65; font-family:'Comic Neue',cursive; }
+
+.mvbtn.lightning { border-color:#facc15; color:#facc15; }
+.mvbtn.lightning:hover:not(:disabled) { background:#facc1522; }
+.mvbtn.thunder   { border-color:#a78bfa; color:#a78bfa; }
+.mvbtn.thunder:hover:not(:disabled)   { background:#a78bfa22; }
+.mvbtn.sense     { border-color:#34d399; color:#34d399; }
+.mvbtn.sense:hover:not(:disabled)     { background:#34d39922; }
+.mvbtn.cloud     { border-color:#7dd3fc; color:#7dd3fc; }
+.mvbtn.cloud:hover:not(:disabled)     { background:#7dd3fc22; }
+.mvbtn.size      { border-color:#fb923c; color:#fb923c; }
+.mvbtn.size:hover:not(:disabled)      { background:#fb923c22; }
+.mvbtn.hair      { border-color:#f9a8d4; color:#f9a8d4; }
+.mvbtn.hair:hover:not(:disabled)      { background:#f9a8d422; }
+
+/* ANIMS */
+.hit-flash { animation:hit .45s ease; }
+@keyframes hit {
+  0%{filter:brightness(1)}
+  20%{filter:brightness(3) saturate(0);transform:translateX(8px)}
+  40%{filter:brightness(1);transform:translateX(-6px)}
+  60%{filter:brightness(2);transform:translateX(4px)}
+  100%{filter:brightness(1);transform:translateX(0)}
+}
+.atk-lunge { animation:lunge .5s ease; }
+@keyframes lunge {
+  0%{transform:translateX(0)} 35%{transform:translateX(38px)} 65%{transform:translateX(0)}
+}
+.atk-lunge-r { animation:lunger .5s ease; }
+@keyframes lunger {
+  0%{transform:scaleX(-1) translateX(0)} 35%{transform:scaleX(-1) translateX(38px)} 65%{transform:scaleX(-1) translateX(0)}
+}
+.grow-anim { animation:grow .6s ease forwards; }
+@keyframes grow {
+  0%{transform:scale(1)} 50%{transform:scale(1.6)} 100%{transform:scale(1.3)}
+}
+.dmg {
+  position:absolute; font-family:'Bangers',cursive; font-size:26px;
+  color:#fff; text-shadow:2px 2px 0 #000,-1px -1px 0 #000;
+  animation:dmgfl 1.2s ease forwards; pointer-events:none; z-index:20;
+}
+@keyframes dmgfl {
+  0%{opacity:1;transform:translateY(0) scale(.8)}
+  30%{transform:translateY(-28px) scale(1.2)}
+  100%{opacity:0;transform:translateY(-65px) scale(.9)}
+}
+
+/* GAME OVER */
+#gameover {
+  display:none; position:absolute; inset:0;
+  background:rgba(0,0,0,.88);
+  flex-direction:column; align-items:center; justify-content:center;
+  z-index:50; gap:14px;
+}
+#go-title { font-family:'Bangers',cursive; font-size:62px; letter-spacing:6px; text-shadow:4px 4px 0 #000; }
+.win{color:#c8860a} .lose{color:#ef4444}
+#go-sub { color:#fff8; font-size:15px; }
+
+#efx { position:absolute; inset:0; pointer-events:none; z-index:15; }
+
+/* monkey king border */
+#menu-monkey,
+#player-img {
+    filter: 
+        drop-shadow(2px 0px 0px #b9ff22) 
+        drop-shadow(-2px 0px 0px #b9ff22) 
+        drop-shadow(0px 2px 0px #b9ff22) 
+        drop-shadow(0px -2px 0px #b9ff22);
+}

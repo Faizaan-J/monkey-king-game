@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Monkey King: The Four Disciplines</title>
+  <link rel="stylesheet" href="./game.css">
+  </link>
+  <script defer src="./game.js"></script>
+</head>
+
+<body>
+  <div id="gc">
+
+    <!--LOADING-->
+    <div id="loading-screen">
+      <div id="loading-label">LOADING...</div>
+      <div id="load-bar-bg">
+        <div id="load-bar">
+        </div>
+      </div>
+      <div id="load-text">0 / 9</div>
+      <button id="continue-btn" disabled>CLICK
+        TO START</button>
+    </div>
+    <!-- CUTSCENE -->
+    <div id="cutscene">
+      <img id="cs-img" src="" alt="">
+      <div id="cs-overlay"></div>
+      <div id="narration-box">
+        <div class="lbl">Narrator</div>
+        <div id="nar-txt"></div>
+      </div>
+      <button id="skip-btn" onclick="skipCutscene()">SKIP ▶▶</button>
+      <div id="pg-ind"></div>
+    </div>
+
+    <!-- MENU -->
+    <div id="menu">
+      <div id="menu-bg"></div>
+      <div id="menu-title">MONKEY KING</div>
+      <div id="menu-sub">THE FOUR DISCIPLINES</div>
+      <img id="menu-monkey" src="./assets/monkeyking/Monkey-King-Aura-Farm.png" alt="Monkey King">
+      <button class="mbtn" onclick="startBattle('fire')">🔥 FIGHT FIRE MAN</button>
+      <button class="mbtn" onclick="startBattle('ice')">❄ FIGHT ICE MAN</button>
+      <button class="mbtn" onclick="playCutscene()">▶ WATCH ORIGIN STORY</button>
+    </div>
+
+    <!-- BATTLE -->
+    <div id="battle">
+      <div id="battle-bg">
+        <div class="cloud" style="width:110px;height:32px;top:28px;left:55px"></div>
+        <div class="cloud" style="width:85px;height:26px;top:50px;left:240px"></div>
+        <div class="cloud" style="width:130px;height:38px;top:18px;right:70px"></div>
+      </div>
+      <div id="hud">
+        <div class="fhud">
+          <div class="fname">MONKEY KING</div>
+          <div class="hpbg">
+            <div class="hpfill" id="php" style="width:100%"></div>
+          </div>
+          <div class="hptxt" id="phptxt">HP: 100/100</div>
+        </div>
+        <div style="font-family:Bangers;color:#c8860a;font-size:18px;letter-spacing:2px;align-self:center">VS</div>
+        <div class="fhud right">
+          <div class="fname" id="ename">TIGER SPIRIT</div>
+          <div class="hpbg">
+            <div class="hpfill" id="ehp" style="width:100%"></div>
+          </div>
+          <div class="hptxt" id="ehptxt">HP: 80/80</div>
+        </div>
+      </div>
+      <div id="arena">
+        <div class="fspr" id="player-spr">
+          <img id="player-img" src="./assets/monkeyking/Monkey-King-Aura-Farm.png" alt="Player">
+          <div class="shadow"></div>
+        </div>
+        <div class="fspr" id="enemy-spr">
+          <img id="enemy-img" src="" alt="Enemy">
+          <div class="shadow"></div>
+        </div>
+        <div id="cloud-fx"></div>
+      </div>
+      <div id="blog">Choose your move!</div>
+      <div id="moves">
+        <button class="mvbtn lightning" onclick="useMove('fist')">
+          <span class="mn">⚡ FIST-LIKE-LIGHTNING</span>
+          <span class="mt">DISCIPLINE ONE</span>
+          <span class="mp" id="pp-fist">PP 8/8</span>
+        </button>
+        <button class="mvbtn thunder" onclick="useMove('kick')">
+          <span class="mn">💥 THUNDEROUS FOOT</span>
+          <span class="mt">DISCIPLINE TWO</span>
+          <span class="mp" id="pp-kick">PP 8/8</span>
+        </button>
+        <button class="mvbtn sense" onclick="useMove('senses')">
+          <span class="mn">👁 HEAVENLY SENSES</span>
+          <span class="mt">DISCIPLINE THREE</span>
+          <span class="mp" id="pp-senses">PP 5/5</span>
+        </button>
+        <button class="mvbtn cloud" onclick="useMove('cloud')">
+          <span class="mn">☁ CLOUD-AS-STEED</span>
+          <span class="mt">DISCIPLINE FOUR</span>
+          <span class="mp" id="pp-cloud">PP 5/5</span>
+        </button>
+        <button class="mvbtn size" onclick="useMove('size')">
+          <span class="mn">⬆ GROW IN SIZE</span>
+          <span class="mt">CAVE MASTERY</span>
+          <span class="mp" id="pp-size">PP 3/3</span>
+        </button>
+        <button class="mvbtn hair" onclick="useMove('hair')">
+          <span class="mn">🐒 HAIR CLONES</span>
+          <span class="mt">CAVE MASTERY</span>
+          <span class="mp" id="pp-hair">PP 3/3</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="gameover">
+      <div id="go-title" class="win">VICTORY!</div>
+      <div id="go-sub">The Monkey King reigns supreme.</div>
+      <button class="mbtn" onclick="goMenu()">⬅ BACK</button>
+    </div>
+
+    <canvas id="efx" width="800" height="600"></canvas>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
