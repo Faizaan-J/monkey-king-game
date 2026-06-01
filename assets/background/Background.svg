@@ -1,0 +1,182 @@
+      <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0">
+        <!-- Sky gradient -->
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1a0a2e"/>
+            <stop offset="60%" stop-color="#4a1942"/>
+            <stop offset="100%" stop-color="#8b2500"/>
+          </linearGradient>
+          <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3d1f00"/>
+            <stop offset="100%" stop-color="#1a0a00"/>
+          </linearGradient>
+          <linearGradient id="lantern-glow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff6b00"/>
+            <stop offset="100%" stop-color="#cc3300"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Sky -->
+        <rect width="800" height="600" fill="url(#sky)"/>
+
+        <!-- Stars -->
+        <circle cx="50"  cy="30"  r="1.2" fill="#fff" opacity=".8"/>
+        <circle cx="120" cy="55"  r="1"   fill="#fff" opacity=".6"/>
+        <circle cx="200" cy="20"  r="1.5" fill="#fff" opacity=".9"/>
+        <circle cx="310" cy="40"  r="1"   fill="#fff" opacity=".7"/>
+        <circle cx="420" cy="15"  r="1.2" fill="#fff" opacity=".8"/>
+        <circle cx="530" cy="35"  r="1"   fill="#fff" opacity=".6"/>
+        <circle cx="650" cy="22"  r="1.5" fill="#fff" opacity=".9"/>
+        <circle cx="740" cy="50"  r="1"   fill="#fff" opacity=".7"/>
+        <circle cx="760" cy="18"  r="1.2" fill="#fff" opacity=".8"/>
+        <circle cx="85"  cy="70"  r="1"   fill="#fff" opacity=".5"/>
+        <circle cx="460" cy="55"  r="1"   fill="#fff" opacity=".6"/>
+        <circle cx="580" cy="65"  r="1.2" fill="#fff" opacity=".7"/>
+
+        <!-- Moon -->
+        <circle cx="680" cy="60" r="38" fill="#ffeebb" opacity="0.18"/>
+        <circle cx="680" cy="60" r="28" fill="#ffeebb" opacity="0.25"/>
+
+        <!-- Far background: misty mountains -->
+        <ellipse cx="150" cy="300" rx="180" ry="120" fill="#2a1535" opacity="0.7"/>
+        <ellipse cx="400" cy="280" rx="220" ry="130" fill="#1e1030" opacity="0.8"/>
+        <ellipse cx="660" cy="310" rx="190" ry="115" fill="#2a1535" opacity="0.7"/>
+
+        <!-- Temple back wall -->
+        <rect x="0" y="230" width="800" height="280" fill="#1f0d00"/>
+        <rect x="0" y="225" width="800" height="12" fill="#3d1500"/>
+
+        <!-- Back wall decorative top border -->
+        <rect x="0" y="220" width="800" height="8" fill="#c8860a" opacity="0.6"/>
+
+        <!-- Wall pattern: evenly spaced columns -->
+        <rect x="60"  y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="160" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="260" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="360" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="460" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="560" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="660" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+        <rect x="730" y="230" width="8" height="280" fill="#2e1200" opacity="0.6"/>
+
+        <!-- Main temple structure center back -->
+        <rect x="280" y="110" width="240" height="130" fill="#2a0f00"/>
+        <!-- Temple roof center -->
+        <polygon points="270,112 400,55 530,112" fill="#8b1a00"/>
+        <polygon points="280,112 400,62 520,112" fill="#a52000"/>
+        <!-- Roof ridge decorations -->
+        <rect x="270" y="108" width="260" height="8" fill="#c8860a"/>
+        <circle cx="270" cy="112" r="6" fill="#c8860a"/>
+        <circle cx="530" cy="112" r="6" fill="#c8860a"/>
+        <circle cx="400" cy="60"  r="7" fill="#c8860a"/>
+        <!-- Roof upturned corners -->
+        <path d="M270,112 Q240,105 230,90" stroke="#c8860a" stroke-width="4" fill="none"/>
+        <path d="M530,112 Q560,105 570,90" stroke="#c8860a" stroke-width="4" fill="none"/>
+
+        <!-- Temple windows -->
+        <rect x="320" y="135" width="45" height="60" rx="4" fill="#0a0500"/>
+        <rect x="435" y="135" width="45" height="60" rx="4" fill="#0a0500"/>
+        <!-- Window glow -->
+        <rect x="320" y="135" width="45" height="60" rx="4" fill="#ff6b00" opacity="0.12"/>
+        <rect x="435" y="135" width="45" height="60" rx="4" fill="#ff6b00" opacity="0.12"/>
+        <!-- Window lattice -->
+        <line x1="342" y1="135" x2="342" y2="195" stroke="#c8860a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="320" y1="165" x2="365" y2="165" stroke="#c8860a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="457" y1="135" x2="457" y2="195" stroke="#c8860a" stroke-width="1.5" opacity="0.5"/>
+        <line x1="435" y1="165" x2="480" y2="165" stroke="#c8860a" stroke-width="1.5" opacity="0.5"/>
+
+        <!-- Left side temple wing -->
+        <rect x="60" y="155" width="180" height="80" fill="#250e00"/>
+        <polygon points="50,157 150,115 270,157" fill="#7a1800"/>
+        <polygon points="60,157 150,120 260,157" fill="#8f1e00"/>
+        <rect x="50" y="153" width="220" height="7" fill="#c8860a"/>
+        <path d="M50,157 Q30,150 22,138" stroke="#c8860a" stroke-width="3" fill="none"/>
+        <path d="M270,157 Q288,150 295,138" stroke="#c8860a" stroke-width="3" fill="none"/>
+
+        <!-- Right side temple wing -->
+        <rect x="560" y="155" width="180" height="80" fill="#250e00"/>
+        <polygon points="530,157 650,115 750,157" fill="#7a1800"/>
+        <polygon points="540,157 650,120 740,157" fill="#8f1e00"/>
+        <rect x="530" y="153" width="220" height="7" fill="#c8860a"/>
+        <path d="M530,157 Q512,150 505,138" stroke="#c8860a" stroke-width="3" fill="none"/>
+        <path d="M750,157 Q768,150 775,138" stroke="#c8860a" stroke-width="3" fill="none"/>
+
+        <!-- Courtyard floor with stone tile pattern -->
+        <rect x="0" y="430" width="800" height="170" fill="url(#ground)"/>
+        <!-- Floor highlight line -->
+        <rect x="0" y="430" width="800" height="4" fill="#5a2800" opacity="0.8"/>
+        <!-- Stone tiles -->
+        <line x1="0"   y1="460" x2="800" y2="460" stroke="#2e1200" stroke-width="1.5" opacity="0.5"/>
+        <line x1="0"   y1="490" x2="800" y2="490" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="0"   y1="520" x2="800" y2="520" stroke="#2e1200" stroke-width="1.5" opacity="0.3"/>
+        <line x1="80"  y1="430" x2="80"  y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="160" y1="430" x2="160" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="240" y1="430" x2="240" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="320" y1="430" x2="320" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="400" y1="430" x2="400" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="480" y1="430" x2="480" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="560" y1="430" x2="560" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="640" y1="430" x2="640" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+        <line x1="720" y1="430" x2="720" y2="600" stroke="#2e1200" stroke-width="1.5" opacity="0.4"/>
+
+        <!-- Left stone pillar -->
+        <rect x="30"  y="230" width="40" height="200" fill="#2e1200"/>
+        <rect x="25"  y="226" width="50" height="10"  fill="#c8860a" opacity="0.7"/>
+        <rect x="25"  y="425" width="50" height="10"  fill="#c8860a" opacity="0.7"/>
+        <!-- Right stone pillar -->
+        <rect x="730" y="230" width="40" height="200" fill="#2e1200"/>
+        <rect x="725" y="226" width="50" height="10"  fill="#c8860a" opacity="0.7"/>
+        <rect x="725" y="425" width="50" height="10"  fill="#c8860a" opacity="0.7"/>
+
+        <!-- Left hanging lantern -->
+        <line x1="90" y1="226" x2="90" y2="252" stroke="#c8860a" stroke-width="2"/>
+        <rect x="76" y="252" width="28" height="38" rx="4" fill="url(#lantern-glow)"/>
+        <rect x="76" y="252" width="28" height="5"  rx="1" fill="#c8860a"/>
+        <rect x="76" y="285" width="28" height="5"  rx="1" fill="#c8860a"/>
+        <line x1="83" y1="252" x2="83" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <line x1="90" y1="252" x2="90" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <line x1="97" y1="252" x2="97" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <!-- Lantern glow -->
+        <ellipse cx="90" cy="268" rx="22" ry="22" fill="#ff6b00" opacity="0.12"/>
+        <!-- Tassel -->
+        <line x1="86" y1="290" x2="84" y2="305" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="90" y1="290" x2="90" y2="308" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="94" y1="290" x2="96" y2="305" stroke="#cc3300" stroke-width="1.5"/>
+
+        <!-- Right hanging lantern -->
+        <line x1="710" y1="226" x2="710" y2="252" stroke="#c8860a" stroke-width="2"/>
+        <rect x="696" y="252" width="28" height="38" rx="4" fill="url(#lantern-glow)"/>
+        <rect x="696" y="252" width="28" height="5"  rx="1" fill="#c8860a"/>
+        <rect x="696" y="285" width="28" height="5"  rx="1" fill="#c8860a"/>
+        <line x1="703" y1="252" x2="703" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <line x1="710" y1="252" x2="710" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <line x1="717" y1="252" x2="717" y2="290" stroke="#c8860a" stroke-width="1" opacity="0.4"/>
+        <ellipse cx="710" cy="268" rx="22" ry="22" fill="#ff6b00" opacity="0.12"/>
+        <line x1="706" y1="290" x2="704" y2="305" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="710" y1="290" x2="710" y2="308" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="714" y1="290" x2="716" y2="305" stroke="#cc3300" stroke-width="1.5"/>
+
+        <!-- Center lanterns above arena -->
+        <line x1="340" y1="226" x2="340" y2="248" stroke="#c8860a" stroke-width="2"/>
+        <rect x="326" y="248" width="28" height="36" rx="4" fill="url(#lantern-glow)"/>
+        <rect x="326" y="248" width="28" height="5" rx="1" fill="#c8860a"/>
+        <rect x="326" y="279" width="28" height="5" rx="1" fill="#c8860a"/>
+        <ellipse cx="340" cy="264" rx="20" ry="20" fill="#ff6b00" opacity="0.1"/>
+        <line x1="336" y1="284" x2="334" y2="298" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="340" y1="284" x2="340" y2="300" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="344" y1="284" x2="346" y2="298" stroke="#cc3300" stroke-width="1.5"/>
+
+        <line x1="460" y1="226" x2="460" y2="248" stroke="#c8860a" stroke-width="2"/>
+        <rect x="446" y="248" width="28" height="36" rx="4" fill="url(#lantern-glow)"/>
+        <rect x="446" y="248" width="28" height="5" rx="1" fill="#c8860a"/>
+        <rect x="446" y="279" width="28" height="5" rx="1" fill="#c8860a"/>
+        <ellipse cx="460" cy="264" rx="20" ry="20" fill="#ff6b00" opacity="0.1"/>
+        <line x1="456" y1="284" x2="454" y2="298" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="460" y1="284" x2="460" y2="300" stroke="#cc3300" stroke-width="1.5"/>
+        <line x1="464" y1="284" x2="466" y2="298" stroke="#cc3300" stroke-width="1.5"/>
+
+        <!-- Ground fog -->
+        <ellipse cx="200" cy="440" rx="200" ry="18" fill="#ff6b00" opacity="0.04"/>
+        <ellipse cx="600" cy="440" rx="200" ry="18" fill="#ff6b00" opacity="0.04"/>
+        <ellipse cx="400" cy="435" rx="300" ry="14" fill="#fff" opacity="0.03"/>
+      </svg>
