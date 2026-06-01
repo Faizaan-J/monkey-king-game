@@ -131,10 +131,6 @@ body {
   text-shadow:3px 3px 0 #000,6px 6px 0 #8b1a1a,0 0 30px #c8860a88;
   z-index:1; line-height:1;
 }
-#menu-sub {
-  font-family:'Bangers',cursive; font-size:19px;
-  color:#fff8; letter-spacing:6px; z-index:1; margin-bottom:20px;
-}
 #menu-monkey {
   width:130px; z-index:1; margin-bottom:16px;
   animation:mfloat 3s ease-in-out infinite;
